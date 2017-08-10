@@ -1,7 +1,6 @@
 package casa.giddy.barefoot;
 
 import com.bmwcarit.barefoot.road.BaseRoad;
-import com.bmwcarit.barefoot.road.RoadReader;
 import com.bmwcarit.barefoot.util.SourceException;
 import com.esri.core.geometry.GeometryEngine;
 import com.esri.core.geometry.Polygon;
@@ -22,14 +21,14 @@ import java.util.HashSet;
  * HDFS Map Reader
  *
  */
-public class HdfsMapReader implements RoadReader
+public class HdfsMapReader implements com.bmwcarit.barefoot.road.RoadReader
 {
     private URI uri = null;
     private ObjectInput reader = null;
     private HashSet<Short> exclusion = null;
     private Polygon polygon = null;
 
-    HdfsMapReader(URI uri) {
+    public HdfsMapReader(URI uri) {
         this.uri = uri;
     }
 
